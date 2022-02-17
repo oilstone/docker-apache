@@ -30,6 +30,8 @@ services:
                 - TZ=${TIMEZONE}
         volumes:
             - ${APP_CODE_PATH_HOST}:${APP_CODE_PATH_CONTAINER}
+        depends_on:
+            - php-fpm
         ports:
             - "${APACHE_HTTP_PORT_HOST}:80"
         networks:
